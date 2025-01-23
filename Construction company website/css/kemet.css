@@ -1,0 +1,32 @@
+body {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tajawal', sans-serif;
+}
+nav a h3 img {
+
+    width: 150px;
+    border-radius: 50%;
+}
+nav  h3{
+    font-size: 50px;
+}
+.navbar-nav {
+    margin-right: auto; 
+}
+.navbar-brand {
+    margin-right: 0;
+    margin-left: 170px; 
+}
+.navbar-nav .nav-item {
+    margin-left: 20px; 
+}
+.container-fluid .font{
+    font-size: 45px;
+}
+.footer img{
+    width: 200px;
+}
+.footer{
+    background-color: #424B5B;
+}
