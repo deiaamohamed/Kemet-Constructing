@@ -3,9 +3,14 @@ body {
     text-align: right;
     font-family: 'Tajawal', sans-serif;
 }
-nav a h3 img {
+nav a h3 img  {
 
     width: 150px;
+    
+}
+nav a h3 img.logo {
+
+    width: 200px;
     
 }
 nav  h3{
@@ -30,3 +35,46 @@ nav  h3{
 .footer{
     background-color: #424B5B;
 }
+.footer .container::before,
+.footer .container::after,
+.footer .container-fluid::before,
+.footer .container-fluid::after {
+    content: none !important;
+}
+
+.footer {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.footer .container {
+    border: none !important;
+    background: none !important;
+}
+.text-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.service-item {
+    height: 450px; /* Fixed height for uniform containers */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+
+
+.px-4.pb-4 {
+    flex-grow: 1; /* Makes the text area adapt to the container size */
+}
+
+.Deiaa img{
+    width: 500px;/* Full width of the container */
+    height: 500px; /* Fixed height for uniform images */
+    object-fit: cover; /* Ensures images maintain aspect ratio and fill the space */
+}
+
