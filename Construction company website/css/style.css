@@ -249,7 +249,7 @@
 
 @media (min-width: 992px) {
     .footer::after {
-        position: absolute;
+        
         content: "";
         width: 1px;
         height: 100%;
@@ -260,7 +260,7 @@
 }
 
 .footer-shape::before {
-    position: absolute;
+    
     content: "";
     width: 80px;
     height: 100%;
