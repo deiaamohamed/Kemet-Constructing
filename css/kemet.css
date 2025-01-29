@@ -5,11 +5,11 @@ body {
 }
 
 nav a h3 img {
-    width: 150px;
+    width: 80px;
 }
 
 nav a h3 img.logo {
-    width: 200px;
+    width: 130px;
 }
 
 nav h3 {
@@ -338,3 +338,19 @@ nav h3 {
 .carousel-control-next {
     width: 5%;
 }
+.styled-header {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #444;
+    padding: 20px;
+    margin: 20px auto;
+    background: #fff; /* Add a background to make the text stand out */
+    border: 3px solid #4EADE0; /* Border color to match your theme */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+    text-align: center; /* Center-align the text */
+    line-height: 1.8; /* Improve readability */
+}
+
+
