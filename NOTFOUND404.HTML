@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Page Not Found</title>
-    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Google Font for Modern Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             background: radial-gradient(circle at center, #1e3a8a, #0f172a);
@@ -64,14 +61,12 @@
             animation: bounce 1.5s infinite;
         }
 
-        /* Social Media Icon Colors */
         .fa-x-twitter { color: #000; } /* X (Twitter) */
         .fa-facebook-f { color: #1877f2; } /* Facebook */
         .fa-linkedin-in { color: #0a66c2; } /* LinkedIn */
         .fa-instagram { color: #e4405f; } /* Instagram */
         .fa-globe { color: #fff; } /* Fallback Globe Icon */
 
-        /* Button Style */
         .go-back-button {
             margin-top: 25px;
             padding: 10px 20px;
@@ -89,7 +84,6 @@
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
         }
 
-        /* Footer Styles */
         footer {
             margin-top: 20px;
             padding: 10px;
@@ -101,7 +95,6 @@
             width: 100%;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -131,7 +124,6 @@
             }
         }
 
-        /* Responsive Design */
         @media (max-width: 600px) {
             h1 {
                 font-size: 2rem;
@@ -165,7 +157,6 @@
 <body>
     <div class="container">
         <h1>404 - Page Not Found</h1>
-        <!-- Sad Image -->
         <img src="img/ErrorImage/errorRobot-preview.png" alt="Sad Robot" class="sad-image">
         <div class="message" id="customMessage">
             <i id="socialIcon"></i>
@@ -176,22 +167,18 @@
         </button>
     </div>
 
-    <!-- Footer -->
     <footer>
         &copy; 2025 KEMETConstructing. All rights reserved.
     </footer>
 
     <script>
-        // Function to get query parameters from the URL
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Get the 'source' query parameter
         const source = getQueryParam('source');
 
-        // Define messages and icons for each social media
         const messages = {
             X: "X page is not found right now.",
             facebook: "Facebook page is not found right now.",
@@ -206,7 +193,6 @@
             instagram: "fa-brands fa-instagram"
         };
 
-        // Display the custom message and icon
         const messageElement = document.getElementById('messageText');
         const iconElement = document.getElementById('socialIcon');
 
