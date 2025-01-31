@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Google Font for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at center, #1e3a8a, #0f172a);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 100%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .sad-image {
+            width: 180px;
+            height: 180px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .message {
+            font-size: 1.4rem;
+            margin-top: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .message i {
+            font-size: 2.2rem;
+            animation: bounce 1.5s infinite;
+        }
+
+        /* Social Media Icon Colors */
+        .fa-x-twitter { color: #000; } /* X (Twitter) */
+        .fa-facebook-f { color: #1877f2; } /* Facebook */
+        .fa-linkedin-in { color: #0a66c2; } /* LinkedIn */
+        .fa-instagram { color: #e4405f; } /* Instagram */
+        .fa-globe { color: #fff; } /* Fallback Globe Icon */
+
+        /* Button Style */
+        .go-back-button {
+            margin-top: 25px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 12px;
+            background: #3b82f6;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .go-back-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.6);
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            font-size: 0.85rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .sad-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .message {
+                font-size: 1.1rem;
+            }
+
+            .message i {
+                font-size: 1.8rem;
+            }
+
+            .go-back-button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            footer {
+                font-size: 0.75rem;
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404 - Page Not Found</h1>
+        <!-- Sad Image -->
+        <img src="img/ErrorImage/errorRobot-preview.png" alt="Sad Robot" class="sad-image">
+        <div class="message" id="customMessage">
+            <i id="socialIcon"></i>
+            <span id="messageText"></span>
+        </div>
+        <button class="go-back-button" onclick="window.location.href='index.html'">
+            Go Back
+        </button>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 KEMETConstructing. All rights reserved.
+    </footer>
+
+    <script>
+        // Function to get query parameters from the URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Get the 'source' query parameter
+        const source = getQueryParam('source');
+
+        // Define messages and icons for each social media
+        const messages = {
+            X: "X page is not found right now.",
+            facebook: "Facebook page is not found right now.",
+            linkedin: "LinkedIn page is not found right now.",
+            instagram: "Instagram page is not found right now."
+        };
+
+        const icons = {
+            X: "fa-brands fa-x-twitter",
+            facebook: "fa-brands fa-facebook-f",
+            linkedin: "fa-brands fa-linkedin-in",
+            instagram: "fa-brands fa-instagram"
+        };
+
+        // Display the custom message and icon
+        const messageElement = document.getElementById('messageText');
+        const iconElement = document.getElementById('socialIcon');
+
+        if (source && messages[source]) {
+            iconElement.className = icons[source];
+            messageElement.textContent = messages[source];
+        } else {
+            iconElement.className = "fa-solid fa-globe";
+            messageElement.textContent = "The requested page is not found.";
+        }
+    </script>
+</body>
+</html>
